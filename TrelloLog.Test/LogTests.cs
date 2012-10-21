@@ -16,6 +16,17 @@ namespace TrelloLog.Test
         }
 
         [TestMethod]
+        public void GetAuthUrlTest()
+        {
+            var url = Log.GetAuthTokenUrl(ApplicationName);
+
+            if (string.IsNullOrEmpty(url))
+                Assert.Fail("Url is empty check your application key");
+
+            Assert.IsNotNull(url,url);
+        }
+
+        [TestMethod]
         public void LogInfoTest()
         {
             Log.LogInfo(ApplicationName,"LogTests::LogInfoTest", "Information message.");

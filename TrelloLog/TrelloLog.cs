@@ -108,6 +108,16 @@ namespace TrelloLog
         }
 
         /// <summary>
+        /// Gets the auth token URL.
+        /// </summary>
+        /// <param name="applicationName">Name of the application.</param>
+        /// <returns>System.String.</returns>
+        public string GetAuthTokenUrl(string applicationName)
+        {
+            return TrelloClient.GetAuthorizationUrl(applicationName,Scope.ReadWrite,Expiration.Never).AbsoluteUri;
+        }
+
+        /// <summary>
         /// Gets the board.
         /// </summary>
         /// <param name="name">The name.</param>
