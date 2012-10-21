@@ -51,8 +51,12 @@ namespace TrelloLog
             var org = ConfigurationManager.AppSettings["Trello-Organization"];
 
             var trello = new Trello(appKey);
-            trello.Authorize(token);
             TrelloClient = trello;
+
+            if (string.IsNullOrEmpty(token))
+                return;
+
+            trello.Authorize(token);
 
             if (!string.IsNullOrEmpty(org))
                 Organization =
