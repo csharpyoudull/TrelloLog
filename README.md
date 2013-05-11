@@ -22,3 +22,7 @@ To generate an API key visit https://trello.com/docs/
     <!--If left empty no organiztion will be used.-->
     <add key="Trello-Organization" value=""/>
   
+  
+  
+  ###Thanks for checking this out
+  ####-steve
